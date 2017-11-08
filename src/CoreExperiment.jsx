@@ -78,6 +78,9 @@ export default class CoreExperiment extends Component {
   }
 
   render() {
-    return this.state.variants[this.state.value] || null;
+    console.log(this.props.forcedVariant);
+    console.log(this.state.value);
+    console.log(this.state.variants);
+    return this.state.variants[this.props.forcedVariant || this.state.value] || null;
   }
 };

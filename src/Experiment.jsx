@@ -93,6 +93,9 @@ export default class Experiment extends Component {
   }
 
   getLocalStorageValue = () => {
+    if(typeof this.props.forcedVariant === "string") {
+      return this.props.forcedVariant;
+    }
     if(typeof this.props.userIdentifier === "string") {
       return this.getSelectedVariant();
     }
